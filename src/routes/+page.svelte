@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { i } from "@inlang/sdk-js";
+  import { i, language, languages, switchLanguage } from "@inlang/sdk-js";
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -8,3 +8,7 @@
 </p>
 <pre>{i("welcome")}</pre>
 <a href="/dashboard">Go to dashboard</a>
+
+{#each languages as lang (lang)}
+  <button on:click={() => switchLanguage(lang)}>{lang}</button>
+{/each}
